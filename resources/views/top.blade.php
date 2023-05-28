@@ -1,50 +1,41 @@
-@extends('layouts.app')
+@extends('layouts.users.app')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <x-parts.basic_card_layout>
-                <x-slot name="cardHeader">
-                    <h4 class="my-2">ログイン画面</h4>
-                </x-slot>
-                <x-slot name="cardBody">
-                    <form method="POST" action="{{ route('login') }}"  enctype="multipart/form-data">
-                        @csrf
+    <x-parts.user_basic_card_layout>
 
-                        <div class="col-md-8 mb-3 mx-auto">
-                            <label class="" for="email">メールアドレス</label>
-                            @include('components.form.text', ['name' => 'email', 'required' => true])
-                            @include('components.form.error', ['name' => 'email'])
-                        </div>
-
-                        <div class="col-md-8 mb-3 mx-auto">
-                            <label class="" for="password">パスワード</label>
-                            @include('components.form.password', ['name' => 'password', 'required' => true])
-                            @include('components.form.error', ['name' => 'password'])
-                        </div>
-
-                        <div class="col-md-8 mb-3 mx-auto">
-                            @include('components.form.checkbox', ['name' => 'remember', 'data' => ['ログイン状態を保持する']])
-                        </div>
-
-                        <div class="text-center my-4">
-                            <button type="submit" class="btn btn-dark">
-                                ログイン
-                            </button>
-                        </div>
-                    </form>
-                    <div class="text-center">
-                        <a href="{{ route('password.request') }}">パスワードを忘れた方</a>
-                        <br>
+        <x-slot name="cardHeader">
+            <h4 class="my-2">お部屋一覧：{{ $rooms->total() . '件中' . $rooms->firstItem() . '-' . $rooms->lastItem() }}件</h4>
+            {{-- <a href="{{ route('rooms.create') }}" class="btn btn-outline-primary">作成する</a> --}}
+        </x-slot>
+        <x-slot name="cardBody">
+        @foreach ($rooms as $room)
+            {{-- 部屋案内のcard --}}
+            <div class="card mt-3 mx-5 border-secondary" style="max-width: 100%;">
+                <div class="row g-0">
+                    <div class="col-md m-3 d-flex align-items-center">
+                        {{-- imageがない場合はこちら: no_image_logo.png を使用 --}}
+                        {{-- <img src="{{ asset('/storage/images/no_image_logo.png') }}" alt="画像はこちらに表示されます"> --}}
+                        <img src="{{ asset('/storage/images/room01.jpeg') }}" alt="画像はこちらに表示されます">
                     </div>
+                    <div class="col-md-8">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                                <h5 class="card-title"><strong>{{ $room->name }}</strong></h5>
+                                <p class="card-text">最大宿泊人数 : {{ $room->count }} 人</p>
+                                <p class="card-text">価格 : {{ number_format($room->price) }} 円</p>
+                            <div class="position-absolute bottom-0 end-0 m-2">
+                                <small class="text-muted">最終更新日 : {{ $room->updated_at->format('Y-m-d') }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        </x-slot>
 
-                    {{-- @if (app()->environment('local'))
-                        <a href="{{ route('admin_dev_login') }}" class="btn btn-dark">開発中ログイン</a>
-                    @endif --}}
-                </x-slot>
-            </x-parts.basic_card_layout>
-        </div>
-    </div>
+        {{-- <div class="row justify-content-center">
+            {{ $rooms->links('pagination::bootstrap-4') }}
+        </div> --}}
+    </x-parts.user_basic_card_layout>
 </div>
 @endsection
