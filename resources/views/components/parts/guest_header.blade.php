@@ -17,9 +17,9 @@
 			<ul class="navbar-nav me-auto">
 
 			</ul>
-			<span class="navbar-text">
+			{{-- <span class="navbar-text">
 				未ログイン時のヘッダー
-			</span>
+			</span> --}}
 			<!-- Right Side Of Navbar -->
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
