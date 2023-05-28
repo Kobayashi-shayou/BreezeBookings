@@ -19,7 +19,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
         <body class="font-sans antialiased">
-
+{{-- TODO:components.parts.users_header へ変更する --}}
         @include('components.parts.guest_header')
 
             <!-- Page Content -->
