@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// 開発中ログイン(ユーザー)
-Route::get('user_dev_login', function () {
-    abort_unless(app()->environment('local'), 403);
-    auth()->guard('user')->login(App\Models\User::first());
-    return to_route('user.home');
-})->name('user_dev_login');
 
 // 開発中ログイン(管理者)
 Route::get('admin_dev_login', function () {
@@ -40,13 +33,9 @@ Route::get('500', function () {
     abort(500);
 });
 
-Route::get('/', function () {
-    return view('top');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+});
 
 Route::get('/top', function () {
     return view('top');
@@ -56,11 +45,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-// });
+Route::get('/top', [RoomController::class, 'top'])->name('top');
+Route::resource('rooms', RoomController::class);
 
 require __DIR__ . '/auth.php';
