@@ -13,8 +13,9 @@ return [
     |
     */
 
+    // デフォルトの認証をwebからuserに変更
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -36,7 +37,7 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
