@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('description')->comment('プランの説明');
             $table->foreignId('room_id')->constrained();
+            $table->string('image01')->nullable();
+            $table->string('image02')->nullable();
+            $table->string('image03')->nullable();
+            $table->string('image04')->nullable();
             $table->timestamps();
         });
     }
