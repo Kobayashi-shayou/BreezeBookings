@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 AdminSeeder::class,
                 RoomSeeder::class,
+                PlanSeeder::class,
             ]);
         }
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,5 +48,7 @@ Route::get('/home', function () {
 
 Route::get('/top', [RoomController::class, 'top'])->name('top');
 Route::resource('rooms', RoomController::class);
+
+Route::resource('plans', PlanController::class);
 
 require __DIR__ . '/auth.php';
