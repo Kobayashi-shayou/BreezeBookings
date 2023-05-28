@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg- text-gray shadow-sm">
 	<div class="container" style="max-width: 100%">
 		{{--  ICON --}}
 		<a href="/" class="me-3">
