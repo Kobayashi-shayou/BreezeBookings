@@ -14,9 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rooms', function (Blueprint $table) {
+            // 料金設定は一部屋いくら（一人でも二人でも同じ）
             $table->id();
-            $table->string('name');
-            $table->string('price');
+            $table->string('name')->comment('部屋の名前');
+            $table->integer('count')->comment('部屋に泊まれる人数');
+            $table->integer('price');
             $table->timestamps();
             $table->softDeletes();
         });
