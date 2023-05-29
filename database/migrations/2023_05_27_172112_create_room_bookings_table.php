@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('room_bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('plan_id')->constrained();
+            $table->foreignId('plan_id')->constrained()->nullable();
             $table->foreignId('room_id')->constrained();
             $table->date('date');
             $table->timestamps();
