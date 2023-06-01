@@ -17,9 +17,10 @@ class RoomSeeder extends Seeder
         //
         \DB::table('rooms')->insert(
             [
-                1 => ['name' => 'スタンダード', 'count' => 2, 'price' => 10000, 'created_at' => now(), 'updated_at' => now()],
-                2 => ['name' => 'スイートルーム', 'count' => 5, 'price' => 100000, 'created_at' => now(), 'updated_at' => now()],
-                3 => ['name' => 'ダブルルーム', 'count' => 1, 'price' => 5000, 'created_at' => now(), 'updated_at' => now()],
+                1 => ['room_type' => 0, 'count' => 1, 'price' => 5000, 'room_no' => 101, 'created_at' => now(), 'updated_at' => now()],
+                2 => ['room_type' => 2, 'count' => 5, 'price' => 100000, 'room_no' => 201, 'created_at' => now(), 'updated_at' => now()],
+                3 => ['room_type' => 1, 'count' => 2, 'price' => 8000, 'room_no' => 301, 'created_at' => now(), 'updated_at' => now()],
+                4 => ['room_type' => 0, 'count' => 1, 'price' => 5000, 'room_no' => 102, 'created_at' => now(), 'updated_at' => now()],
             ]
         );
     }
