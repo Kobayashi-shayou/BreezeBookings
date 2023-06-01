@@ -11,7 +11,8 @@
             <x-parts.basic_table_layout>
                 <x-slot name="thead">
                     <tr>
-                        <th scope="col" class="text-nowrap">部屋の名前</th>
+                        <th scope="col" class="text-nowrap">部屋の番号</th>
+                        <th scope="col" class="text-nowrap">部屋のタイプ</th>
                         <th scope="col" class="text-nowrap">一部屋の価格</th>
                         <th scope="col" class="text-nowrap">最大宿泊人数</th>
                         <th scope="col" class="text-nowrap">作成日</th>
@@ -23,7 +24,8 @@
                     @if($rooms->isNotEmpty())
                         @foreach($rooms as $room)
                             <tr>
-                                <td class="text-nowrap px-2"><a href="{{ route('rooms.show', $room) }}">{{ $room->name }}</a></td>
+                                <td class="text-nowrap px-2">{{ $room->room_no }}</td>
+                                <td class="text-nowrap px-2"><a href="{{ route('rooms.show', $room) }}">{{ App\Enums\RoomType::getRoomTypeName($room->room_type) }}</a></td>
                                 <td class="text-nowrap px-2">{{ number_format($room->price) }} 円</td>
                                 <td class="text-nowrap px-2">{{ $room->count }} 人</td>
                                 <td class="text-nowrap px-2">{{ $room->created_at->format('Y-m-d') }}</td>
