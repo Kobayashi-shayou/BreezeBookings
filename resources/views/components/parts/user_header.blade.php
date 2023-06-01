@@ -23,10 +23,13 @@
 			<!-- Right Side Of Navbar -->
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					{{-- <a class="nav-link" href="{{ route('login') }}">ショップログイン</a> --}}
+					<a class="nav-link" href="{{ route('top') }}">top</a>
 				</li>
 				<li class="nav-item">
-					{{-- <a class="nav-link" href="{{ route('login') }}">ショップ新規登録</a> --}}
+					<a class="nav-link" href="{{ route('rooms.index') }}">room</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('plans.index') }}">plan</a>
 				</li>
 				<li class="nav-item">
 					{{-- <a class="nav-link" href="{{ route('login') }}">購入者ログイン</a> --}}
