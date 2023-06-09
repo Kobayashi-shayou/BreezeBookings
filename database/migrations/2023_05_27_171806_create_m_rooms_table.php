@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
+        Schema::create('m_rooms', function (Blueprint $table) {
             // 料金設定は一部屋いくら（一人でも二人でも同じ）
             $table->id();
             $table->integer('room_no')->unique()->comment('部屋番号');
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rooms');
+        Schema::dropIfExists('m_rooms');
     }
 };
