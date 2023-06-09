@@ -47,8 +47,6 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-
-
 Route::get('/top', [RoomController::class, 'top'])->name('top');
 Route::resource('rooms', RoomController::class);
 
