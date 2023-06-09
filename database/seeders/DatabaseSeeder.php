@@ -32,9 +32,9 @@ class DatabaseSeeder extends Seeder
             $this->call([
                 UserSeeder::class,
                 AdminSeeder::class,
-                RoomSeeder::class,
+                MRoomSeeder::class,
                 PlanSeeder::class,
-                RoomBookingSeeder::class,
+                // RoomBookingSeeder::class,
             ]);
         }
     }
