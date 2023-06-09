@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BookingController\StoreRequest;
-use App\Http\Requests\BookingController\UpdateRequest;
+use App\Http\Requests\Admin\BookingController\StoreRequest;
+use App\Http\Requests\Admin\BookingController\UpdateRequest;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
