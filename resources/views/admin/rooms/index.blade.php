@@ -1,8 +1,8 @@
-@extends('layouts.users.app')
+@extends('layouts.admins.app')
 
 @section('content')
 <div class="container">
-    <x-parts.user_basic_card_layout>
+    <x-parts.admin_basic_card_layout>
         <x-slot name="cardHeader">
             <h4 class="my-2">部屋一覧：{{ $rooms->total() . '件中' . $rooms->firstItem() . '-' . $rooms->lastItem() }}件</h4>
             {{-- <a href="{{ route('rooms.create') }}" class="btn btn-outline-primary">作成する</a> --}}
@@ -48,6 +48,6 @@
                 {{ $rooms->links('pagination::bootstrap-4') }}
             </div>
         </x-slot>
-    </x-parts.user_basic_card_layout>
+    </x-parts.admin_basic_card_layout>
 </div>
 @endsection

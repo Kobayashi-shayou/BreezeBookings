@@ -1,8 +1,8 @@
-@extends('layouts.users.app')
+@extends('layouts.admins.app')
 
 @section('content')
 <div class="container">
-    <x-parts.user_basic_card_layout>
+    <x-parts.admin_basic_card_layout>
         <x-slot name="cardHeader">
             <h4 class="my-2">予約枠作成</h4>
         </x-slot>
@@ -23,6 +23,6 @@
                 </div>
             </form>
         </x-slot>
-    </x-parts.user_basic_card_layout>
+    </x-parts.admin_basic_card_layout>
     </div>
 @endsection

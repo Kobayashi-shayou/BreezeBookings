@@ -1,9 +1,9 @@
-@extends('layouts.users.app')
+@extends('layouts.admins.app')
 
 
 @section('content')
 <div class="container">
-    <x-parts.user_basic_card_layout>
+    <x-parts.admin_basic_card_layout>
         <x-slot name="cardHeader">
             <h4 class="my-2">部屋の編集</h4>
             <a href="{{ route('rooms.index') }}" class="btn btn-outline-primary">一覧へ戻る</a>
@@ -38,6 +38,6 @@
                 </div>
             </form>
         </x-slot>
-    </x-parts.user_basic_card_layout>
+    </x-parts.admin_basic_card_layout>
 </div>
 @endsection
