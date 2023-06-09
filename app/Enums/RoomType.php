@@ -29,7 +29,7 @@ class RoomType extends Enum
         return [
             self::SINGLE_ROOM => self::getRoomTypeName(self::SINGLE_ROOM),
             self::DOUBLE_ROOM => self::getRoomTypeName(self::DOUBLE_ROOM),
-            self::SWEET_ROOM => self::getRoomTypeName(self::SWEET_ROOM),
+            self::SWEET_ROOM  => self::getRoomTypeName(self::SWEET_ROOM),
         ];
     }
 }
